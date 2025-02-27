@@ -40,7 +40,6 @@ class SkinDiseaseClassifier:
         # Create the model architecture
         inputs = Input(shape=input_shape)
         x = base_model(inputs, training=False)
-        x = GlobalAveragePooling2D()(x)
         x = Dense(128, activation='relu')(x)
         x = Dropout(0.2)(x)
         x = Dense(64, activation='relu')(x)
