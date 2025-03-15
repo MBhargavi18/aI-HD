@@ -14,7 +14,7 @@ from tensorflow.keras.applications import MobileNetV2, InceptionV3
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
 from tensorflow.keras.optimizers import Adam
-from tensorflow.keras.layers import GlobalAveragePooling2D
+
 
 import cv2
 import pickle
@@ -42,7 +42,7 @@ class SkinDiseaseClassifier:
         # Create the model architecture
         inputs = Input(shape=input_shape)
         x = base_model(inputs, training=False)
-        x = GlobalAveragePooling2D()(x)
+        x = GlobalMaxPooling2D()(x)
         x = Dense(128, activation='relu')(x)
         x = Dropout(0.2)(x)
         x = Dense(64, activation='relu')(x)
