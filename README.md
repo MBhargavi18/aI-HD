@@ -96,7 +96,6 @@ See `pregnancy_risk_dataset_info.py` for more details.
 
 ## Future Improvements
 
-- Implement a web or mobile interface for user interaction
 - Add more disease categories to the skin disease classifier
 - Incorporate more features for pregnancy risk prediction
 - Implement explainable AI techniques for better interpretability
