@@ -14,6 +14,7 @@ from tensorflow.keras.applications import MobileNetV2, InceptionV3
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
 from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.layers import GlobalAveragePooling2D
 import cv2
 import pickle
 import warnings
