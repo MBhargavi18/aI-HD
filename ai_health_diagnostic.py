@@ -1,3 +1,4 @@
+from tensorflow.keras.layers import GlobalMaxPooling2D
 import os
 import numpy as np
 import pandas as pd
