@@ -15,6 +15,11 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.layers import GlobalMaxPooling2D
+from tensorflow.keras.layers import (
+    Dense, Conv2D, MaxPooling2D, Flatten, Dropout, BatchNormalization, 
+    GlobalMaxPooling2D, Input
+)
+
 
 
 import cv2
