@@ -12,8 +12,9 @@ import tensorflow as tf
 from tensorflow.keras.models import Sequential, Model, load_model
 from tensorflow.keras.layers import (
     Dense, Conv2D, MaxPooling2D, Flatten, Dropout, 
-    BatchNormalization, Input, GlobalMaxPooling2D
+    BatchNormalization, Input, GlobalMaxPooling2D  # ✅ Added GlobalMaxPooling2D
 )
+
 from tensorflow.keras.applications import MobileNetV2
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
