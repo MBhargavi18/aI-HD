@@ -23,6 +23,32 @@ import cv2
 import pickle
 import warnings
 warnings.filterwarnings('ignore')
+from flask import Flask, request, jsonify
+from twilio.rest import Client
+
+app = Flask(__name__)
+
+# Twilio credentials
+TWILIO_ACCOUNT_SID = "AC7c045454b692b27a3fc9762e416f6688"
+TWILIO_AUTH_TOKEN = "3c23886053e9991ac44a7ce6daa3983e"
+TWILIO_PHONE_NUMBER = ""+17853903931
+DEMO_PHONE_NUMBER = "6281520694"  # Replace with your number
+
+client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
+
+@app.route('/call-hospital', methods=['POST'])
+def call_hospital():
+    try:
+        call = client.calls.create(
+            to=DEMO_PHONE_NUMBER,
+            from_=TWILIO_PHONE_NUMBER,
+            url="http://demo.twilio.com/docs/voice.xml"  # Twilio XML for voice message
+        )
+        return jsonify({"message": "Call initiated successfully!", "call_sid": call.sid}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
 
 class SkinDiseaseClassifier:
     def __init__(self):
